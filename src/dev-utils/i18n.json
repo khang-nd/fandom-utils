@@ -1,0 +1,16 @@
+{
+  "en": {
+    "config": "Config",
+    "report": "Report",
+    "message": "Changes will take effect on the next page load",
+    "noConfig": "No configuration available",
+    "doc": "Documentation"
+  },
+  "vi": {
+    "config": "Cài đặt",
+    "report": "Báo lỗi",
+    "message": "Thay đổi sẽ có hiệu lực trong lần tải trang sau",
+    "noConfig": "Không có cài đặt",
+    "doc": "Tài liệu"
+  }
+}

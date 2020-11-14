@@ -1,0 +1,45 @@
+:root {
+  --color-primary: #404a57;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.toggle {
+  width: 2em;
+  height: 1em;
+  border-radius: 3px;
+  padding: 0.2em;
+  background: #ccc;
+  display: flex;
+  cursor: pointer;
+  transition: background 0.3s ease-out;
+}
+
+.toggle::after {
+  content: "";
+  width: 1em;
+  height: 1em;
+  border-radius: 3px;
+  background: #fff;
+  transition: transform 0.3s ease-out;
+}
+
+input:checked + .toggle {
+  background: var(--color-primary);
+}
+
+input:checked + .toggle::after {
+  transform: translateX(100%);
+}
+
+input:disabled + .toggle {
+  cursor: default;
+  opacity: 0.6;
+}

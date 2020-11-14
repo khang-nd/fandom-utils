@@ -1,0 +1,81 @@
+main {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  background: #f9f9f9;
+  padding: 1em;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  margin: 1.5em 1em;
+  padding: 1em;
+  padding-bottom: 2em;
+  background: #fff;
+  box-shadow: 0 0.1em 0.4em #ddd;
+  box-sizing: border-box;
+}
+
+h1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0;
+  font-weight: unset;
+}
+
+.title {
+  margin: -1.2em 0 0 -1.1em;
+  padding: 0.3em 0.5em;
+  color: #fff;
+  background: var(--color-primary);
+}
+
+fieldset {
+  padding: 0;
+  margin-top: 0.5em;
+  border: none;
+}
+
+.config {
+  display: flex;
+  align-items: center;
+  margin: 0.3em 0;
+  min-height: 30px;
+}
+
+.label {
+  min-width: 150px;
+}
+
+input {
+  width: 100%;
+  padding: 6px 4px;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.doc {
+  position: absolute;
+  bottom: 0.5em;
+  right: 0.5em;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 900px) {
+  section {
+    width: calc(50% - 2em);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  section {
+    width: calc(33.3% - 2em);
+  }
+}
