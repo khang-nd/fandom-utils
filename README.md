@@ -4,7 +4,6 @@ A browser extension aiming to bring together all your favorite tools and utiliti
 
 | Table of Contents
 |---
-|
 
 * [Installation](#installation)
 * [Features](#features)
