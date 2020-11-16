@@ -20,5 +20,16 @@
     "clearCache": "Xóa bộ nhớ đệm",
     "cleared": "Đã xóa tất cả cài đặt và bộ nhớ đệm",
     "saved": "Đã lưu cài đặt của bạn"
+   },
+      "pt-br": {
+    "config": "Configuração",
+    "report": "Reportar",
+    "message": "As alterações entrarão em vigor no próximo carregamento de página",
+    "noConfig": "Nenhuma configuração disponível",
+    "doc": "Documentação",
+    "search": "Pesquisar",
+    "clearCache": "Limpar cache",
+    "cleared": "Todas as configurações e cache foram limpos",
+    "saved": "Suas configurações foram salvas"
   }
 }
