@@ -2,13 +2,24 @@
   "en": {
     "config": "Config",
     "report": "Report",
-    "message": "Changes will take effect on the next page load",
+    "message": "Changes will take effect on the next page load.",
     "noConfig": "No configuration available",
     "doc": "Documentation",
     "search": "Search",
     "clearCache": "Clear cache",
-    "cleared": "All settings and cache have been cleared",
-    "saved": "Your settings have been saved"
+    "cleared": "All settings and cache have been cleared.",
+    "saved": "Your settings have been saved."
+  },
+  "de": {
+    "config": "Anpassungen",
+    "report": "Fehler melden",
+    "message": "Änderungen treten beim nächsten Laden der Seite in Kraft.",
+    "noConfig": "Keine Anpassungen verfügbar",
+    "doc": "Dokumentation",
+    "search": "Suchen",
+    "clearCache": "Cache leeren",
+    "cleared": "Alle Einstellungen wurden zurückgesetzt und der Cache geleert.",
+    "saved": "Deine Einstellungen wurden gespeichert."
   },
   "vi": {
     "config": "Cài đặt",
