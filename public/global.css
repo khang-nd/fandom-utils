@@ -4,11 +4,16 @@
 
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Segoe UI", Tahoma, sans-serif;
 }
 
 input[type="checkbox"] {
   display: none;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
 }
 
 .toggle {

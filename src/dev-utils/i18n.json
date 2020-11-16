@@ -4,13 +4,21 @@
     "report": "Report",
     "message": "Changes will take effect on the next page load",
     "noConfig": "No configuration available",
-    "doc": "Documentation"
+    "doc": "Documentation",
+    "search": "Search",
+    "clearCache": "Clear cache",
+    "cleared": "All settings and cache have been cleared",
+    "saved": "Your settings have been saved"
   },
   "vi": {
     "config": "Cài đặt",
     "report": "Báo lỗi",
     "message": "Thay đổi sẽ có hiệu lực trong lần tải trang sau",
     "noConfig": "Không có cài đặt",
-    "doc": "Tài liệu"
+    "doc": "Tài liệu",
+    "search": "Tìm kiếm",
+    "clearCache": "Xóa bộ nhớ đệm",
+    "cleared": "Đã xóa tất cả cài đặt và bộ nhớ đệm",
+    "saved": "Đã lưu cài đặt của bạn"
   }
 }

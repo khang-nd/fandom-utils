@@ -61,18 +61,25 @@ function process(util, name, file) {
       if (!local) local = { [name]: {} };
 
       if (utils[name].config) {
-        let scope = "";
-        let options = {};
-        Object.keys(utils[name].config).forEach((configKey) => {
-          const configVal = utils[name].config[configKey];
-          if (configKey === "_scope") {
-            scope = configVal === "window" ? configVal : `window.${configVal}`;
-          } else {
-            options[configKey] =
-              sync[configKey] != null ? sync[configKey] : configVal;
-          }
-        });
-        inject("config.js", `${scope}=${JSON.stringify(options)}`);
+        let oOptions = {};
+        let sOptions = "";
+        let scope = utils[name].config["_scope"];
+        const scopedWindow = scope === "window";
+        scope = scopedWindow ? "window" : `window.${scope}`;
+        Object.keys(utils[name].config)
+          .filter((configKey) => configKey !== "_scope")
+          .forEach((configKey) => {
+            const configVal =
+              sync[configKey] != null
+                ? sync[configKey]
+                : utils[name].config[configKey];
+            if (scopedWindow) sOptions += `window.${configKey} = ${configVal};`;
+            else oOptions[configKey] = configVal;
+          });
+        inject(
+          "config.js",
+          scopedWindow ? sOptions : `${scope}=${JSON.stringify(oOptions)}`
+        );
       }
 
       if (scripts && scripts.length)

@@ -1,4 +1,12 @@
 const Utils = {
+  AjaxBatchDelete: {
+    isScript: true,
+    scripts: ["AjaxBatchDelete.js"],
+    styles: ["AjaxBatchDelete.css"],
+    config: {
+      batchDeleteDelay: 1000,
+    },
+  },
   ArchiveTool: {
     isScript: true,
     scripts: ["ArchiveTool/code.js"],
@@ -8,6 +16,18 @@ const Utils = {
       archiveListTemplate: "ArchiveList",
       archivePageTemplate: "ArchivePage",
       archiveSubpage: "Archive",
+    },
+  },
+  BackToTopButton: {
+    isScript: true,
+    scripts: ["BackToTopButton/code.js"],
+    styles: ["BackToTopButton.css"],
+    config: {
+      _scope: "window",
+      BackToTopModern: false,
+      BackToTopArrow: false,
+      BackToTopSpeed: 600,
+      BackToTopStart: 800,
     },
   },
   FandomXP: {
@@ -45,9 +65,18 @@ const Utils = {
     isScript: false,
     styles: ["PseudoMonobook.css"],
   },
+  PurgeButton: {
+    isScript: true,
+    scripts: ["PurgeButton/code.js"],
+  },
   QuickDiff: {
     isScript: true,
     scripts: ["QuickDiff/code.js"],
+  },
+  ReferencePopups: {
+    isScript: true,
+    scripts: ["ReferencePopups/code.configure.js", "ReferencePopups/code.js"],
+    styles: ["ReferencePopups.css"],
   },
   WHAM: {
     isScript: true,
@@ -60,6 +89,20 @@ const Utils = {
       WHAMDeleteReason: "Cleanup",
       WHAMBlockDuration: "2 weeks",
       WHAMBlockReason: "Vandalism",
+    },
+  },
+  WikiActivity: {
+    isScript: true,
+    scripts: ["WikiActivity.js"],
+    styles: ["WikiActivity.css"],
+    config: {
+      _scope: "rwaOptions",
+      limit: 50,
+      namespaces: [0, 1, 2, 3, 4, 5, 6, 7, 110, 111, 500, 501, 828, 829],
+      showBotEdits: false,
+      headerLink: true,
+      refresh: false,
+      refreshDelay: 300000,
     },
   },
 };

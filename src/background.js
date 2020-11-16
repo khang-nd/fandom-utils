@@ -8,21 +8,20 @@ function togglePopup(url) {
   });
 }
 
+const { tabs } = browser;
 browser.runtime.onInstalled.addListener(({ reason }) => {
-  const { tabs } = browser;
-
   if (reason === "install") {
     tabs.create({
       url: pkg.repository.url,
       active: false,
     });
   }
-
-  tabs.onActivated.addListener(() => {
-    tabs
-      .query({ active: true, currentWindow: true })
-      .then(([tab]) => togglePopup(tab.url));
-  });
-
-  tabs.onUpdated.addListener((_, __, tab) => togglePopup(tab.url));
 });
+
+tabs.onActivated.addListener(() => {
+  tabs
+    .query({ active: true, currentWindow: true })
+    .then(([tab]) => togglePopup(tab.url));
+});
+
+tabs.onUpdated.addListener((_, __, tab) => togglePopup(tab.url));

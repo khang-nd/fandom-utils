@@ -55,9 +55,14 @@
     margin-right: 0.3em;
   }
 
+  main {
+    max-height: 300px;
+    overflow: auto;
+  }
+
   label {
     display: flex;
-    padding: 0.8em 1.5em;
+    padding: 0.8em 2em;
     cursor: pointer;
     transition: background 0.15s;
   }
@@ -81,7 +86,9 @@
     <img src={config} alt="config" width="18" />
     {i18n.config}
   </a>
-  <a target="_blank" href="https://github.com/khang-nd/fandom-utils#Report_Issues">
+  <a
+    target="_blank"
+    href="https://github.com/khang-nd/fandom-utils#report-issues">
     <img src={bug} alt="github" width="18" />
     {i18n.report}
   </a>
