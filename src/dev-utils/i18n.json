@@ -21,6 +21,17 @@
     "cleared": "Alle Einstellungen wurden zurückgesetzt und der Cache geleert.",
     "saved": "Deine Einstellungen wurden gespeichert."
   },
+  "hi": {
+    "config": "कॉन्फ़िगरेशन",
+    "report": "रिपोर्ट करें",
+    "message": "बदलाव अगले पृष्ठ लोड पर दिखेंगे।",
+    "noConfig": "कोई कॉन्फ़िगरेशन नहीं मिला",
+    "doc": "डॉक्यूमेंटेशन",
+    "search": " खोजें",
+    "clearCache": "कैच क्लियर करें",
+    "cleared": "आपके सभी सेटिंग्स और कैच को क्लियर कर दिया गया है।",
+    "saved": "आपके सेटिंग्स को सेव कर दिया गया है।"
+  },
   "vi": {
     "config": "Cài đặt",
     "report": "Báo lỗi",
