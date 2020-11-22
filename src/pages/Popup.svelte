@@ -20,13 +20,19 @@
       options[target.id] = { enabled: true };
     }
     options = { ...options };
+    SyncStorage.set(options);
+
     message = i18n.message;
     timer = setTimeout(() => (message = ""), 2000);
-    SyncStorage.set(options);
   }
 </script>
 
 <style>
+  main {
+    font-size: 15px;
+    width: 260px;
+  }
+
   .head {
     display: flex;
     background: var(--color-primary);
@@ -38,7 +44,7 @@
 
   .head a {
     display: flex;
-    padding: 0.8em 1.5em;
+    padding: 0.8rem 1.5rem;
     width: 100%;
     justify-content: center;
     text-decoration: none;
@@ -55,9 +61,7 @@
     margin-right: 0.3em;
   }
 
-  main {
-    font-size: 15px;
-    width: 260px;
+  .wrapper {
     max-height: 300px;
     overflow: auto;
   }
@@ -78,36 +82,41 @@
   }
 
   .message {
-    padding: 0.6em;
+    padding: 0.4rem 1rem;
     background: #eee;
+    position: fixed;
+    top: 0;
+    z-index: 1;
   }
 </style>
 
-<div class="head">
-  <a target="_blank" href="options.html">
-    <img src={config} alt="config" width="18" />
-    {i18n.config}
-  </a>
-  <a
-    target="_blank"
-    href="https://github.com/khang-nd/fandom-utils#report-issues">
-    <img src={bug} alt="github" width="18" />
-    {i18n.report}
-  </a>
-</div>
 <main>
-  {#each Object.keys(utils) as id}
-    <label for={id}>
-      <input
-        {id}
-        type="checkbox"
-        on:change={set}
-        checked={options[id] && options[id].enabled} />
-      <span class="toggle" />
-      <span class="label">{id}</span>
-    </label>
-  {/each}
+  <div class="head">
+    <a target="_blank" href="options.html">
+      <img src={config} alt="config" width="18" />
+      {i18n.config}
+    </a>
+    <a
+      target="_blank"
+      href="https://github.com/khang-nd/fandom-utils#report-issues">
+      <img src={bug} alt="github" width="18" />
+      {i18n.report}
+    </a>
+  </div>
+  <div class="wrapper">
+    {#each Object.keys(utils) as id}
+      <label for={id}>
+        <input
+          {id}
+          type="checkbox"
+          on:change={set}
+          checked={options[id] && options[id].enabled} />
+        <span class="toggle" />
+        <span class="label">{id}</span>
+      </label>
+    {/each}
+  </div>
+  {#if message}
+    <div transition:slide class="message">{message}</div>
+  {/if}
 </main>
-{#if message}
-  <div transition:slide class="message">{message}</div>
-{/if}
