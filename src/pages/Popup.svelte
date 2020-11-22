@@ -56,6 +56,8 @@
   }
 
   main {
+    font-size: 15px;
+    width: 260px;
     max-height: 300px;
     overflow: auto;
   }

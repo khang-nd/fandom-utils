@@ -1,6 +1,6 @@
 {
   "name": "fandom-utils",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Useful utilities to tweak Fandom wikis to your own preference.",
   "repository": {
     "url": "https://github.com/khang-nd/fandom-utils"

@@ -4,6 +4,7 @@ const Utils = {
     scripts: ["AjaxBatchDelete.js"],
     styles: ["AjaxBatchDelete.css"],
     config: {
+      _scope: "window",
       batchDeleteDelay: 1000,
     },
   },

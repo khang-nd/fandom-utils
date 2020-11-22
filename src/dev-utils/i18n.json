@@ -32,6 +32,17 @@
     "cleared": "आपके सभी सेटिंग्स और कैच को क्लियर कर दिया गया है।",
     "saved": "आपके सेटिंग्स को सेव कर दिया गया है।"
   },
+  "pt-br": {
+    "config": "Configuração",
+    "report": "Reportar",
+    "message": "As alterações entrarão em vigor no próximo carregamento de página",
+    "noConfig": "Nenhuma configuração disponível",
+    "doc": "Documentação",
+    "search": "Pesquisar",
+    "clearCache": "Limpar cache",
+    "cleared": "Todas as configurações e cache foram limpos",
+    "saved": "Suas configurações foram salvas"
+  },
   "vi": {
     "config": "Cài đặt",
     "report": "Báo lỗi",
@@ -42,16 +53,5 @@
     "clearCache": "Xóa bộ nhớ đệm",
     "cleared": "Đã xóa tất cả cài đặt và bộ nhớ đệm",
     "saved": "Đã lưu cài đặt của bạn"
-   },
-      "pt-br": {
-    "config": "Configuração",
-    "report": "Reportar",
-    "message": "As alterações entrarão em vigor no próximo carregamento de página",
-    "noConfig": "Nenhuma configuração disponível",
-    "doc": "Documentação",
-    "search": "Pesquisar",
-    "clearCache": "Limpar cache",
-    "cleared": "Todas as configurações e cache foram limpos",
-    "saved": "Suas configurações foram salvas"
   }
 }

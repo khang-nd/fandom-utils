@@ -35,6 +35,10 @@ In any case, please feel free to report any issues either via the [Fandom Develo
 
 ## FAQs
 
+> I cannot get it to work on my wiki. What's the problem?
+
+* Wait a couple of minutes or navigate to the [Fandom Developers Wiki](https://dev.fandom.com/), then it should work. This is an issue with the CORS proxy server as a free service.
+
 > How does this work?
 
 * Just install the extension/addon in your browser and activate the utilities you would like to use, and that's it!

@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.1
+
+- Fixed popup issues on Firefox
+- Added translations: German, Hindi, Portuguese (Brazil)
+
 ## v1.1.0
 
 - Fixed configurations.
