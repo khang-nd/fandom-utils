@@ -30,7 +30,7 @@
 <style>
   main {
     font-size: 15px;
-    width: 260px;
+    min-width: 260px;
   }
 
   .head {
@@ -44,7 +44,7 @@
 
   .head a {
     display: flex;
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1rem;
     width: 100%;
     justify-content: center;
     text-decoration: none;

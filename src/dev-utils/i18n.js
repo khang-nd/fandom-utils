@@ -1,7 +1,8 @@
 import i18n from "./i18n.json";
 
 export default (function getLanguage() {
-  let lang = navigator.language || navigator.userLanguage || "en";
-  [lang] = lang.split("-"); // en-US, en-AU, fr-FR etc.
-  return i18n[lang];
+  let lang = navigator.language || navigator.userLanguage;
+  lang = lang.toLowerCase();
+  lang = i18n[lang] ? lang : lang.split("-")[0]; // 'pt-br' or 'pt'
+  return i18n[lang] || i18n.en;
 })();
