@@ -2,17 +2,24 @@
   import "./Options.css";
   import icon from "../../public/images/icon.svg";
   import { slide } from "svelte/transition";
-  import utils from "../list";
+  import utils from "../data/list.json";
   import i18n from "../dev-utils/i18n";
   import { SyncStorage, LocalStorage } from "../dev-utils/browser";
+  import Input from "../components/Input.svelte";
 
   let options = {};
   let messages = {};
   let timers = {};
 
-  Object.keys(utils).forEach((util) => (messages[util] = ""));
+  Object.keys(utils).forEach((util) => {
+    messages[util] = "";
+    options[util] = {};
+    options[util].enabled = false;
+  });
 
-  SyncStorage.get().then((data) => (options = data));
+  SyncStorage.get().then((data) => {
+    Object.keys(data).forEach((key) => (options[key] = data[key]));
+  });
 
   function alert(util, msg) {
     clearTimeout(timers[util]);
@@ -26,15 +33,11 @@
 
   function setConfig({ target }) {
     let { dataset, type, value } = target;
-    const { util, config, isarray } = dataset;
+    const { util, config, isArray } = dataset;
     if (type === "checkbox") value = target.checked;
     if (type === "number") value = Number(value);
-    if (isarray)
-      value = value
-        .split(",")
-        .map((v) => (Number(v) !== NaN ? Number(v) : v.trim()));
+    if (isArray) value = value.split(",").map((v) => Number(v) || v.trim());
 
-    if (!options[util]) options[util] = {};
     options[util][config] = value;
     options = { ...options };
     SyncStorage.set(options);
@@ -43,10 +46,10 @@
 
   function clearCache({ target }) {
     const { id } = target;
-    const storage = { [id]: null };
+    const storage = { [id]: {} };
     LocalStorage.set(storage);
     SyncStorage.set(storage);
-    options[id] = null;
+    options[id] = {};
     options = { ...options };
     alert(id, "cleared");
   }
@@ -67,50 +70,23 @@
       {/if}
       <h2>
         <div class="title">{id}</div>
-        <label for={id}>
-          <input
-            {id}
-            type="checkbox"
-            data-util={id}
-            data-config="enabled"
-            on:change={setConfig}
-            checked={options[id] && options[id].enabled} />
-          <span class="toggle" />
-        </label>
+        <Input
+          util={id}
+          config="enabled"
+          bind:option={options[id].enabled}
+          {setConfig} />
       </h2>
       {#if utils[id].config}
-        <fieldset disabled={!options[id] || !options[id].enabled}>
+        <fieldset disabled={!options[id].enabled}>
           {#each Object.keys(utils[id].config).filter((key) => key !== '_scope') as key}
-            <label class="config" for={key}>
+            <div class="config" for={key}>
               <span class="label">{key}</span>
-              {#if typeof utils[id].config[key] === 'boolean'}
-                <input
-                  id={key}
-                  type="checkbox"
-                  data-util={id}
-                  data-config={key}
-                  on:change={setConfig}
-                  checked={options[id] && options[id][key] != null ? options[id][key] : utils[id].config[key]} />
-                <span class="toggle" />
-              {:else if typeof utils[id].config[key] === 'number'}
-                <input
-                  id={key}
-                  type="number"
-                  data-util={id}
-                  data-config={key}
-                  on:change={setConfig}
-                  value={options[id] && options[id][key] ? options[id][key] : utils[id].config[key]} />
-              {:else}
-                <input
-                  id={key}
-                  type="text"
-                  data-util={id}
-                  data-config={key}
-                  data-isarray={Array.isArray(utils[id].config[key]) ? true : null}
-                  on:change={setConfig}
-                  value={options[id] && options[id][key] ? options[id][key] : utils[id].config[key]} />
-              {/if}
-            </label>
+              <Input
+                util={id}
+                config={key}
+                bind:option={options[id][key]}
+                {setConfig} />
+            </div>
           {/each}
         </fieldset>
       {:else}

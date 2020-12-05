@@ -1,4 +1,4 @@
-import i18n from "./i18n.json";
+import i18n from "../data/i18n.json";
 
 export default (function getLanguage() {
   let lang = navigator.language || navigator.userLanguage;

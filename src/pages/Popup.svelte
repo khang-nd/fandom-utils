@@ -2,7 +2,7 @@
   import { slide } from "svelte/transition";
   import { SyncStorage } from "../dev-utils/browser";
   import i18n from "../dev-utils/i18n";
-  import utils from "../list";
+  import utils from "../data/list.json";
   import config from "../../public/images/config.svg";
   import bug from "../../public/images/bug.svg";
 
@@ -30,12 +30,23 @@
 <style>
   main {
     font-size: 15px;
-    min-width: 260px;
+    min-width: 290px;
   }
 
   .head {
     display: flex;
     background: var(--color-primary);
+    position: relative;
+    margin-bottom: 0.3em;
+  }
+
+  .head::after {
+    content: "";
+    background: linear-gradient(to right, #a5ec09, #08d7d7);
+    height: 0.3em;
+    width: 100%;
+    position: absolute;
+    top: 100%;
   }
 
   .head:hover a {
@@ -62,7 +73,7 @@
   }
 
   .wrapper {
-    max-height: 300px;
+    max-height: 350px;
     overflow: auto;
   }
 

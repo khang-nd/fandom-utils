@@ -1,4 +1,6 @@
-# <img src="public/images/icon.svg" width="40">Fandom Utils
+# Fandom Utils
+
+![Promo](https://vignette.wikia.nocookie.net/central/images/d/d8/Fandom-utils-promo.png)
 
 A browser extension aiming to bring together all your favorite tools and utilities, Fandom Utils provides a simplified and easy-to-use interface to fully control your tools and enhance your browsing experience across all Fandom wikis.
 
@@ -45,7 +47,7 @@ In any case, please feel free to report any issues either via the [Fandom Develo
 
 > What utilities are available?
 
-* You can see a list of available utilities in [this file](src/list.js).
+* You can see a list of available utilities from [here](https://dev.fandom.com/wiki/FandomUtils#Integrated_Utils).
 
 > Can I suggest a utility to be added?
 
@@ -70,4 +72,4 @@ Fandom Utils is open-source, all contributions are welcome. Follow the below ste
 
 ### Translations
 
-Feel free to translate the extension into your own languages. Simply edit [this file](src/dev-utils/i18n.json) following the format there.
+Feel free to translate the extension into your own languages. Simply edit [this file](src/data/i18n.json) following the format there.

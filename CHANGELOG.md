@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.2.0
+
+- Added utils:
+  - MassEdit
+  - OrganizedNotifs
+  - PortableCSSPad
+  - RecentChangesMultiple
+  - RecentChangesModern
+
+## v1.1.2
+
+- Fixed issues with language support.
+
 ## v1.1.1
 
 - Fixed popup issues on Firefox

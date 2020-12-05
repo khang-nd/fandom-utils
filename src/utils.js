@@ -1,6 +1,6 @@
 import { SyncStorage, LocalStorage } from "./dev-utils/browser";
 import fetch from "./dev-utils/fetch";
-import utils from "./list";
+import utils from "./data/list.json";
 
 const day = 24 * 60 * 60 * 1000; // ms
 
